@@ -8,7 +8,7 @@ module Webpacker
 
     def initialize(argv)
       @argv = argv
-
+      ENV["NODE_ENV"] = 'development'
       @app_path              = File.expand_path(".", Dir.pwd)
       @node_modules_bin_path = ENV["WEBPACKER_NODE_MODULES_BIN_PATH"] || `yarn bin`.chomp
       @webpack_config        = File.join(@app_path, "config/webpack/development.js")
