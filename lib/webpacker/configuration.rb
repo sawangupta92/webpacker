@@ -86,7 +86,7 @@ class Webpacker::Configuration
 
     def load
       # YAML.load(config_path.read)[env].deep_symbolize_keys
-    data = ERB.new config_path.read
+    data = ::ERB.new config_path.read
     YAML.load(data.result(binding))[env].deep_symbolize_keys
 
     rescue Errno::ENOENT => e
